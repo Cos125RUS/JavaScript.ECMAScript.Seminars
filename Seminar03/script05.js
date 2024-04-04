@@ -1,14 +1,14 @@
 // Создать класс "Пользователь" с приватными полями "имя", "возраст" и "электронная почта". Класс должен иметь публичные методы "изменить имя", "изменить возраст" и "изменить электронную почту", которые будут изменять соответствующие поля объекта. Также класс должен иметь статическое поле "максимальный возраст", которое будет задавать максимально допустимый возраст для всех создаваемых объектов.
 
 class Person {
-    static #maxAge = 120; 
+    static maxAge = 120; 
     #name;
     #age;
     #email;
 
     constructor(name, age, email) {
         this.#name = name;
-        if (age > Person.#maxAge) {
+        if (age > Person.maxAge) {
             throw new Error("(In constructor) maxAge must be greater than 120");
         }
         this.#age = age;
@@ -21,7 +21,7 @@ class Person {
     }
     getAge = () => this.#age;
     setAge = (age) => {
-        if (age > Person.#maxAge) {
+        if (age > Person.maxAge) {
             throw new Error("maxAge must be greater than 120");
         }
         this.#age = age;
